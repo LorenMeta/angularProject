@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { BonusesService } from 'src/app/bonuses/bonuses.service';
 
 @Component({
   selector: 'app-employees-bonuses',
@@ -7,9 +8,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeesBonusesComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private bonusesService: BonusesService) { }
+  displayBonusData:any = [];
   ngOnInit(): void {
+    this.bonusesService.getEmployeesBonuses().subscribe(data => this.displayBonusData = data)
   }
 
 }
