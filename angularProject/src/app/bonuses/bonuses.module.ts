@@ -10,12 +10,6 @@ import { BonusesService } from './bonuses.service';
   ],
   imports: [
     CommonModule
-  ],
-  exports: [
-    EmployeesBonusesComponent
-  ],
-  providers: [
-    BonusesService
   ]
 })
 export class BonusesModule { }
