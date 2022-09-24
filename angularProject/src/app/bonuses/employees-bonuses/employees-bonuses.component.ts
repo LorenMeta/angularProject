@@ -11,7 +11,9 @@ export class EmployeesBonusesComponent implements OnInit {
 
   constructor(private bonusesService: BonusesService) { }
 
-  ngOnInit(): void { this.loadEmplyeesBonuses() }
+  ngOnInit(): void {
+    this.loadEmplyeesBonuses()
+  }
 
   private loadEmplyeesBonuses(): void {
     this.bonusesService.getEmployeesBonuses().subscribe((employees: EmployeesBonuses[]) => this.employeesBonuses = employees)

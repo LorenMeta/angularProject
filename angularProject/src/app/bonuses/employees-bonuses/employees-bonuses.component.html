@@ -1,8 +1,8 @@
-<table>
+<table class="table" border='1'>
     <th>Id</th>
     <th>Bonus</th>
-    <tr *ngFor="let data of employeesBonuses">
-        <td>{{data.id}}</td>
-        <td>{{data.bonus}}</td>
+    <tr *ngFor="let employeeBonus of employeesBonuses">
+        <td>{{employeeBonus.id}}</td>
+        <td>{{employeeBonus.bonus}}</td>
     </tr>
 </table>
