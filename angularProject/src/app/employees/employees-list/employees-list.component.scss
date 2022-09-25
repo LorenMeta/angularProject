@@ -1,4 +1,12 @@
 .high-salary {
-    color: rgb(255, 0, 0);
+    color: red;
     font-weight: bold;
+}
+.manager-position {
+    color: yellow;
+}
+
+.manager-position:hover {
+    background-color: yellow;
+    color: black;
 }

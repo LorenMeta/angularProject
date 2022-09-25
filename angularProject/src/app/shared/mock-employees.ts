@@ -22,8 +22,8 @@ export const EMPLOYEES: Employee[] = [
         firstName: 'Valand',
         lastName: 'Mata',
         dateOfBirth: '20-05-2002',
-        position: 'Camera Man',
-        salary: 800
+        position: 'Manager',
+        salary: 8000
     },
     {
         id: 4,
