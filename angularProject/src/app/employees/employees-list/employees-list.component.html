@@ -15,8 +15,8 @@
                 <tr *ngFor="let employee of employees">
                     <td>{{employee.firstName}}</td>
                     <td>{{employee.lastName}}</td>
-                    <td>{{employee.dateOfBirth}}</td>
-                    <td [ngClass]="{'manager-position': employee.position.includes('Manager')}">{{employee.position}}</td>
+                    <td>{{employee.dateOfBirth | date: 'dd MMMM y'}}</td>
+                    <td appManager>{{employee.position | positionUppercased}}</td>
                     <td [ngClass]="{'high-salary':employee.salary>=3000}">{{employee.salary | currency}}</td>
                 </tr>
             </tbody>

@@ -21,7 +21,7 @@ export const EMPLOYEES: Employee[] = [
         id: 3,
         firstName: 'Valand',
         lastName: 'Mata',
-        dateOfBirth: '20-05-2002',
+        dateOfBirth: '08-05-2002',
         position: 'Manager',
         salary: 8000
     },
