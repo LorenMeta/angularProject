@@ -1,5 +1,7 @@
-<app-header></app-header>
-<div class="container">
+<app-header>
+    <span title>Employees list</span>
+</app-header>
+<div class="container-fluid">
     <div class="row">
         <table class="table table-dark">
             <thead>
@@ -9,6 +11,7 @@
                     <th>Date Of Birth</th>
                     <th>Position</th>
                     <th>Salary</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -18,8 +21,49 @@
                     <td>{{employee.dateOfBirth | date: 'dd MMMM y'}}</td>
                     <td appManager>{{employee.position | positionUppercased}}</td>
                     <td [ngClass]="{'high-salary':employee.salary>=3000}">{{employee.salary | currency}}</td>
+                    <td>
+                        <button type="button" class="close" aria-label="remove" (click)="removeEmployee(employee.id)">
+                            <span aria-hidden="true">&times;</span></button>
+                    </td>
                 </tr>
             </tbody>
         </table>
+    </div>
+</div>
+
+<div class="jumbotron jumbotron-fluid">
+    <div class="container">
+        <h3 class="display-4">Add a new employee</h3>
+        <form [formGroup]="employeeForm">
+            <div class="row form-group">
+                <div class="col-sm-4">
+                    <label>First Name</label>
+                    <input type="text" placeholder="First Name" class="form-control" formControlName="firstName">
+                </div>
+                <div class="col-sm-4">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Last Name" class="form-control" formControlName="lastName">
+                </div>
+                <div class="col-sm-4">
+                    <label>Date of birth</label>
+                    <input type="date" placeholder="Date of birth" class="form-control" formControlName="dateOfBirth">
+                </div>
+                <div class="col-sm-4">
+                    <label>Position</label>
+                    <input type="text" placeholder="Position" class="form-control" formControlName="position">
+                </div>
+                <div class="col-sm-4">
+                    <label>Salary</label>
+                    <input type="number" placeholder="Salary" class="form-control" formControlName="salary">
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <button class="btn btn-primary float-right" (click)="addEmployee()"
+                        [disabled]="employeeForm.invalid">Submit</button>
+                    <button class="btn btn-secondary float-right" (click)="employeeForm.reset()">Reset</button>
+                </div>
+            </div>
+        </form>
     </div>
 </div>

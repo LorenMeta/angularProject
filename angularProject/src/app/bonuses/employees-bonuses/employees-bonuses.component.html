@@ -1,8 +1,29 @@
-<table class="table" border='1'>
-    <th>Id</th>
-    <th>Bonus</th>
-    <tr *ngFor="let employeeBonus of employeesBonuses">
-        <td>{{employeeBonus.id}}</td>
-        <td>{{employeeBonus.bonus}}</td>
-    </tr>
-</table>
+<app-header>
+    <span title>Employees bonuses list</span>
+</app-header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <table class="table table-dark">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Bonus</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let employeeBonus of employeesBonuses">
+                        <td>{{employeeBonus.id}}</td>
+                        <td>{{employeeBonus.firstName}}</td>
+                        <td>{{employeeBonus.lastName}}</td>
+                        <td [ngClass]="{'high-bonus':employeeBonus.bonus>=500}">{{employeeBonus.bonus | currency}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
